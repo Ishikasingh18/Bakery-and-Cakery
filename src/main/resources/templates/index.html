@@ -1,0 +1,381 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Cabin&family=Herr+Von+Muellerhoff&family=Poiret+One&family=Source+Sans+Pro:wght@700&display=swap"
+	rel="stylesheet">
+	
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<script src="https://unpkg.com/scrollreveal"></script>
+
+
+
+<link href="../static/css/style.css" th:href="@{/css/style.css}"
+	type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
+<title>Bakery & Cakery</title>
+
+</head>
+
+<body>
+
+
+
+	<!-- 
+
+ ######################################################################
+ 			NAVBAR SECTION
+ ######################################################################
+ 
+  -->
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+
+		<div class="container-fluid">
+
+			<a class="navbar-brand" href="#"> <img
+				th:src="@{/images/logo.png}" src="../static/images/logo.png"
+				width="auto" height="80" class="d-inline-block align-top" alt="" />
+			</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto"></ul>
+				<ul class="navbar-nav">
+
+					<li class="nav-item active"><a class="nav-link" th:href="@{/}"
+						href="#"> HOME </a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/aboutus}" href="#"> ABOUT US </a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/shop}" href="#">MENU</a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/contact}" href="#"> CONTACT US </a></li>
+
+<!-- 
+						   #######################################
+						   MORE SECTION IN NAVBAR
+						   #######################################
+
+ -->
+
+<li class="dropdown nav-item active"><a class="dropdown-toggle nav-link" data-toggle="dropdown">MORE
+<span class="caret"></span></a>
+
+<ul class="dropdown-menu" style="font-size: 20px; line-height: 2">						
+						
+<li><a	class="dropdown-item" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">LOG IN</a></li>
+<li> <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">LOG OUT</a></li>
+<li> <a class="dropdown-item" th:href="@{/checkout}" href="#">CHECKOUT</a></li>
+<li><a class="dropdown-item" th:href="@{/register}" href="#">SIGN UP</a></li>
+</ul>
+</li>
+
+
+
+
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/cart}" href="#"> <i class="fa fa-shopping-cart"
+							style="font-size: 30px; color: white"> </i> <span
+							class="nav-link position-absolute top-10 start-100 translate-middle badge rounded-pill bg-secondary"
+							th:text="${cartCount}">0 </span>
+
+					</a></li>
+
+				</ul>
+
+			</div>
+		</div>
+
+
+	</nav>
+	
+	
+<!-- 
+					#########################################
+                         BACKGROUND IMAGE 
+                    #########################################
+                    
+                     -->
+                     
+                     
+                     
+<div class="backgroundImage">
+	
+		<img th:src="@{/images/bg_5_crop.jpg}" alt="bgimg" style="width:100%;">
+	
+			<div class="top-left">
+			
+				<div class="global-headline">
+					<p class="sub-headline"> Bakery & Cakery </p>
+				</div>
+			</div>
+		
+</div>
+
+
+					<!-- 
+					##################################
+					STORY SECTION
+					################################## -->
+
+	<section class="our-story">
+		<div class="container">
+			<div class="row">
+				<div class="description padding-right animate-left">
+					<div class="global-headline">
+						<h2 class="sub-headline">Discover</h2>
+						<h3 class="headline headline-dark">Our Story</h3>
+						<div class="asterisk">
+							<i class="fas fa-asterisk"></i>
+						</div>
+					</div>
+					<p>
+
+						Birthdays are nature’s way of telling us to eat more cake.<br>
+						A cake forms the most important part of a birthday celebration.
+						So, if you want to send a lovely “Happy Birthday” wish to your
+						best friend or close relative, you cannot ignore the wonderful
+						birthday cakes. These cakes are available in a variety of flavors
+						like chocolate, vanilla, mango, strawberry, red velvet, white
+						forest etc.
+
+
+					</p>
+					<a th:href="@{/aboutus}" class="btn btn-secondary">Learn More</a>
+				</div>
+				<div class="image animate-right">
+					<img class="story-img" src="images/story-img.jpg" alt="bread">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	
+							<!-- 
+							#################################
+							MENU SECTION 
+							#################################
+							-->
+	
+	
+	
+	<section class="menu">
+		<div class="container">
+			<div class="row">
+				<div class="image-group padding-right animate-left">
+					<img src="images/square-1.jpg" alt="image"> <img
+						src="images/square-2.jpg" alt="image"> <img
+						src="images/square-3.jpg" alt="image"> <img
+						src="images/square-4.jpg" alt="image">
+				</div>
+				<div class="description animate-right">
+					<div class="global-headline">
+						<h2 class="sub-headline">Explore</h2>
+						<h3 class="headline headline-dark">Menu</h3>
+						<div class="asterisk">
+							<i class="fas fa-asterisk"></i>
+						</div>
+					</div>
+					<p>We have a wide array of bakery products and more for us, our
+						customers’ needs come first and to serve them better and offer the
+						best in terms of quality, benefits, flavour and taste we have
+						grown and nurtured our own brands over the years.</p>
+
+					<a th:href="@{/shop}" href="#" class="btn btn-secondary">See
+						Full Menu</a>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+						<!-- 
+						######################################
+						BAKERS DELIGHT SECTION 
+						######################################
+						-->
+						
+						
+	<section class="delight">
+		<div class="container">
+			<div class="row">
+				<div class="description padding-right animate-left">
+					<div class="global-headline">
+						<h2 class="sub-headline">Baker's</h2>
+						<h3 class="headline headline-dark">Delight</h3>
+						<div class="asterisk">
+							<i class="fas fa-asterisk"></i>
+						</div>
+					</div>
+					<p>
+						Bliss in every single bite..!!<br> Life is all about these
+						happy moments where you live a little more. So, opt for these
+						mesmerizing bakery delight for your loved ones and enhance the
+						bank of great memories.
+
+					</p>
+					<a th:href="@{/shop}" href="#" class="btn btn-secondary"> Order Now </a>
+				</div>
+				<div class="image-group animate-right">
+					<img class="animate-top" src="images/bakers-delight-1.jpg"
+						alt="bread"> <img class="animate-bottom"
+						src="images/bakers-delight-2.jpg" alt="bread">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+						<!-- 
+						####################################
+						FOOTER SECTION
+						####################################
+						 -->
+	 
+ <footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+  
+	<p>This is a testing Website !! <br><br> 
+	</p>
+					 
+	<p>Follow Us</p>
+
+<!-- Facebook -->
+
+<p>
+<a style="color: #ffffff;" href="https://www.facebook.com/" role="button"
+  ><i class="fab fa-facebook-f fa-lg fa-2x"></i
+></a> &nbsp;  &nbsp; &nbsp;
+
+<!-- Twitter -->
+<a style="color: #ffffff" href="https://twitter.com/" role="button"
+  ><i class="fab fa-twitter fa-lg fa-2x"></i
+></a> &nbsp;  &nbsp; &nbsp;
+
+<!-- Google -->
+<a style="color: #ffffff;" href="https://www.google.com/" role="button"
+  ><i class="fab fa-google fa-lg fa-2x"></i
+></a> &nbsp;  &nbsp; &nbsp;
+
+<!-- Instagram -->
+<a style="color: #ffffff;" href="https://www.instagram.com/" role="button"
+  ><i class="fab fa-instagram fa-lg fa-2x"></i
+></a> &nbsp;  &nbsp; &nbsp;
+</p>
+  
+					<!--
+					#####################################
+					 LINK (to login as ADMIN)
+					 ####################################
+					  -->
+					
+ 
+<div class="col-lg-3 col-md-6 mb-4 mb-md-0" >
+					
+             <font size="3px"> <a th:href="@{/admin}" href="#" class="text-white"> ADMIN </a>  </font>
+	&nbsp;  &nbsp;
+	
+              <font size="3px"> <a  th:href="@{/register}" href="#" class="text-white"> SIGN UP</a> </font>&nbsp;  &nbsp;
+              
+               <font size="3px"> <a th:href="@{/contact}" href="#" class="text-white"> CONTACT US</a> </font>&nbsp;  &nbsp;
+     			</div>
+				
+				<br>
+				
+  								<!-- 
+  								##############################
+  								COPYRIGHT
+  								##############################
+  								 -->
+  
+  <div class="text-center " >
+  <p class="copyright__text text-white">
+							
+							Copyright &copy;
+							<script>
+								document.write(new Date().getFullYear());
+							</script>
+							All rights reserved | This template is made with <i
+								class="fa fa-heart" aria-hidden="true"></i> by Ishika & Ankit
+							&#128516; &#128516; &#128516; 
+							
+						</p>
+   
+  </div>
+  
+  <!-- Copyright -->
+  
+   </div>
+  
+</footer>
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+		
+		
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

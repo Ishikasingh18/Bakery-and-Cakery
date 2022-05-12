@@ -1,0 +1,380 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+	
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/flaticon.css" type="text/css">
+<link rel="stylesheet" href="css/barfiller.css" type="text/css">
+<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+<link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+<link rel="stylesheet" href="css/nice-select.css" type="text/css">
+<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Cabin&family=Herr+Von+Muellerhoff&family=Poiret+One&family=Source+Sans+Pro:wght@700&display=swap"
+	rel="stylesheet">
+	
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+	
+	
+	
+<script src="https://unpkg.com/scrollreveal"></script>
+
+
+
+<link href="../static/css/style.css" th:href="@{~/css/style.css}"
+	type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
+<title>About Us</title>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+
+		<div class="container-fluid">
+
+			<a class="navbar-brand" href="#"> <img
+				th:src="@{/images/logo.png}" src="../static/images/logo.png"
+				width="auto" height="80" class="d-inline-block align-top" alt="" />
+			</a>
+
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto"></ul>
+				<ul class="navbar-nav">
+
+					<li class="nav-item active"><a class="nav-link" th:href="@{/}"
+						href="#"> HOME </a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/aboutus}" href="#"> ABOUT US </a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/shop}" href="#">MENU</a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/contact}" href="#"> CONTACT US </a></li>
+
+
+
+<!-- 
+						   #######################################
+						   MORE SECTION IN NAVBAR
+						   #######################################
+
+ -->
+
+<li class="dropdown nav-item active"><a class="dropdown-toggle nav-link" data-toggle="dropdown">MORE
+<span class="caret"></span></a>
+
+<ul class="dropdown-menu" style="font-size: 20px; line-height: 2">						
+						
+<li><a	class="dropdown-item" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">LOG IN</a></li>
+<li> <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">LOG OUT</a></li>
+<li> <a class="dropdown-item" th:href="@{/checkout}" href="#">CHECKOUT</a></li>
+<li><a class="dropdown-item" th:href="@{/register}" href="#">SIGN UP</a></li>
+</ul>
+</li>
+
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/cart}" href="#"> <i class="fa fa-shopping-cart"
+							style="font-size: 30px; color: white"> </i> <span
+							class="nav-link position-absolute top-10 start-100 translate-middle badge rounded-pill bg-secondary"
+							th:text="${cartCount}">0 </span>
+
+					</a></li>
+
+				</ul>
+
+			</div>
+		</div>
+
+
+	</nav>
+
+
+
+
+	<section class="about spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="about__text">
+						<div class="section-title">
+							<span>About Bakery shop</span>
+							<h2>Cakes and bakes from the house of Queens!</h2>
+						</div>
+						<p>The "Bakery Shop" is a Indian Brand that started as a small
+							family business. Sells all type of bakery cakes and snackes.We
+							have a wide array of bakery products and more for us, our
+							customers’ needs come first and to serve them better and offer
+							the best in terms of quality, benefits, flavour and taste we have
+							grown and nurtured our own brands over the years.</p>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="about__bar">
+						<div class="about__bar__item">
+							<p>Cake design</p>
+							<div id="bar1" class="barfiller">
+								<div class="tipWrap">
+									<span class="tip"></span>
+								</div>
+								<span class="fill" data-percentage="95"></span>
+							</div>
+						</div>
+						<div class="about__bar__item">
+							<p>Snacks</p>
+							<div id="bar2" class="barfiller">
+								<div class="tipWrap">
+									<span class="tip"></span>
+								</div>
+								<span class="fill" data-percentage="80"></span>
+							</div>
+						</div>
+						<div class="about__bar__item">
+							<p>Cake Recipes</p>
+							<div id="bar3" class="barfiller">
+								<div class="tipWrap">
+									<span class="tip"></span>
+								</div>
+								<span class="fill" data-percentage="90"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+		<div class="container">
+			<div class="row col-md-12">
+				
+				 <div class=" col-md-3 col-xs-6"> 
+			
+					<img src="images/square-1.jpg" alt="image"> </div>
+					
+					<div class=" col-md-3 col-xs-6">
+					<img src="images/square-2.jpg" alt="image"> </div>
+					
+					<div class=" col-md-3 col-xs-6">
+				    <img src="images/square-3.jpg" alt="image"> </div>
+				    
+				    <div class=" col-md-3 col-xs-6">
+					<img src="images/square-4.jpg" alt="image"> </div>
+				</div>
+				
+				
+				</div>
+			
+	
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+	<style type="text/css">
+.section-title span {
+	color: #f08632;
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	display: block;
+	margin-bottom: 10px
+}
+
+.section-title h2 {
+	font-size: 46px;
+	color: #111111;
+	line-height: 60px;
+	font-weight: 700;
+	font-style: italic;
+	font-family: "Playfair Display", serif;
+}
+
+.about__text p {
+	font-size: 16px;
+	font-family: "Montserrat", sans-serif;
+	color: #111111;
+	font-weight: 400;
+	line-height: 28px;
+	margin: 0 0 15px 0;
+}
+
+.about__bar .about__bar__item {
+	margin-bottom: 40px;
+}
+
+.about__bar .about__bar__item p {
+	color: #444444;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.about__bar .about__bar__item .barfiller {
+	width: 100%;
+	height: 8px;
+	background: #e1e1e1;
+	border: none;
+	position: relative;
+	margin-bottom: 20px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-moz-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+}
+
+.about__bar .about__bar__item .barfiller .tip {
+	margin-top: -36px;
+	padding: 0;
+	font-size: 16px;
+	color: #111111;
+	font-weight: 600;
+	background: none;
+}
+
+.about__bar .about__bar__item .barfiller .tip:after {
+	display: none;
+}
+
+
+</style>
+ 
+ 
+	<!-- FOOTER -->
+	 
+ <footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+  
+	<p>This is a testing Website !! <br><br> 
+	</p>
+					 
+	<p>Follow Us</p>
+
+<!-- Facebook -->
+
+<p>
+<a style="color: #ffffff;" href="https://www.facebook.com/" role="button">
+<i class="fab fa-facebook-f fa-lg fa-2x"></i>
+</a> &nbsp;  &nbsp; &nbsp;
+
+<!-- Twitter -->
+<a style="color: #ffffff" href="https://twitter.com/" role="button">
+<i class="fab fa-twitter fa-lg fa-2x"></i>
+</a> &nbsp;  &nbsp; &nbsp;
+
+<!-- Google -->
+<a style="color: #ffffff;" href="https://www.google.com/" role="button">
+<i class="fab fa-google fa-lg fa-2x"></i>
+</a> &nbsp;  &nbsp; &nbsp;
+
+<!-- Instagram -->
+<a style="color: #ffffff;" href="https://www.instagram.com/" role="button">
+<i class="fab fa-instagram fa-lg fa-2x"></i>
+</a> &nbsp;  &nbsp; &nbsp;
+</p>
+  
+							<!-- LINK (to login as ADMIN) -->
+							
+ 
+<div class="col-lg-3 col-md-6 mb-4 mb-md-0" >
+					
+             <font size="3px"> <a th:href="@{/admin}" href="#" class="text-white"> ADMIN </a>  </font>
+	&nbsp;  &nbsp;
+	
+              <font size="3px"> <a  th:href="@{/register}" href="#" class="text-white"> SIGN UP</a> </font>&nbsp;  &nbsp;
+              
+               <font size="3px"> <a th:href="@{/contact}" href="#" class="text-white"> CONTACT US</a> </font>&nbsp;  &nbsp;
+     			</div>
+				
+				<br>
+				
+  									<!-- COPYRIGHT SECTION -->
+  
+  
+  <div class="text-center " >
+  <p class="copyright__text text-white">
+							
+	Copyright &copy;
+	<script>document.write(new Date().getFullYear());</script>
+	All rights reserved | This template is made with 
+	<i class="fa fa-heart" aria-hidden="true"></i> by Ishika & Ankit &#128516; &#128516; &#128516; 
+	</p>
+  </div>
+   </div>
+  
+</footer>
+
+
+
+
+
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/jquery.barfiller.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/jquery.slicknav.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/main.js"></script>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
