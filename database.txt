@@ -1,0 +1,16 @@
+/* CDAC project (Springboot Thymeleaf Bakery)*/
+create database test;
+
+use test;
+select * from category;
+select * from product;
+select * from user;
+select * from roles;
+select * from user_role;
+
+insert into roles(id,name) values (1,'ROLE_ADMIN'), (2,'ROLE_USER') ;
+
+insert into user(id, email,password,first_name,last_name) values 
+(1,'ishika18296@gmail.com','$2a$12$KJ37Cxs0KPrhtmv/CQ9nH.WJxZM.G.ldJLWrGG6jW8CbrAfqITIaK','Ishika','Singh');
+
+insert into user_role(user_id,role_id) values (1,1), (1,2);
