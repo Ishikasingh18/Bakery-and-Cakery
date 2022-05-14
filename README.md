@@ -57,6 +57,38 @@ The following items should be installed in your system:
 3) Navigate to Bakery & Cakery 
 
     Visit [http://localhost:8080](http://localhost:8080) in your browser.
+    
+## Spring Security OAuth2 with Google 
+
+This is a sample Spring MVC web application which secured by Spring Security. Instead of using form-based security, it is secured by Spring Security OAuth2 and the OAuth2 provider is Google.
+
+The [google-oauth2.properties](src/main/resources/google-oauth2.properties) (in `src/main/resources`) contains the details of the Google application which it uses to authenticate details. Change the values of the following attributes to the values for your application:
+
+- `oauth2.clientId`
+- `oauth2.clientSecret`
+
+While the `pom.xml` file includes Sprint Boot dependencies, they're only used for dependency management (i.e. using the versions indicated in other POM files). But the web application itself does not use any of the Spring Boot auto-configuration features.
+
+
+### 1. For registration your app in Google App, perform the following steps:
+
+* Go to https://console.developers.google.com and login with your Google account (this will be the developer account and the email of this account will be published when someone tries to authenticate with the Google application).
+* If you don't have a project create a new one and then click into the project.
+* In the menu "API manager" on the left side select "Credentials" --> "Create credentials" --> "OAuth client ID".
+
+* Application Type -> "Web Application",
+* Authorized Javascript Origins -> " ", 
+* Authorized Redirect URI -> [http://localhost:8080/google/login](http://localhost:8080/google/login)
+* Copy the client ID and client Secret and update the `application.properties`
+
+### 2. To run this application use:
+
+```bash
+mvn spring-boot:run
+  ```
+
+### 3. Open browser and browse at 
+[http://localhost:8080/google/login](http://localhost:8080/google/login)
 
 
 
