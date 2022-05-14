@@ -44,7 +44,6 @@ The following items should be installed in your system:
 
 1) On the command line
     ```
-    Clone the application
     git clone https://github.com/Ishikasingh18/Bakery-and-Cakery.git
     ```
 2) Inside Eclipse or STS
